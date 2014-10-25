@@ -39,4 +39,4 @@ for (activitylabel in activity_labels$V2) {
 library(plyr)
 tidy <- ddply(cleandata, .(subject_id, activity), .fun=function(x){ colMeans(x[,-c(1:2)]) })
 
-write.table(tidy, file="tidy.txt", row.name=FALSE)
+write.table(tidy, file="tidy.txt", row.name=FALSE, sep="\t")
